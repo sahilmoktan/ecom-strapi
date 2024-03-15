@@ -1,6 +1,6 @@
 import "./App.css";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, useRoutes } from "react-router-dom";
 import routes from './routes';
