@@ -1,9 +1,9 @@
 # Ecommerce App Tech Stack
-FRONTEND            BACKEND
-- reactjs           - strapi
-- apollo/clien      - GraphQL
-- React router      
-- strapi
+| FRONTEND       | BACKEND   |
+|----------------|-----------|
+| - ReactJS      | - Strapi  |
+| - Apollo/Client| - GraphQL |
+| - React Router |           |
 
 
 ## befor this repo creation
@@ -20,3 +20,10 @@ FRONTEND            BACKEND
 
 
 
+### apollo server setting
+- in app.js imp "@apollo/client"
+- create client
+- wrap components by Apolloprovider return from App
+
+### .
+materialize
