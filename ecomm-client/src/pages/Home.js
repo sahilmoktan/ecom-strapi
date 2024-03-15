@@ -12,7 +12,7 @@ const Home = () => {
     if(error){console.log(error)}
   return (
     
-        <div>
+        <div className='homeroot'>
             {data.products.data.map(({id,attributes})=>{
                 return <Card
                 id={id}

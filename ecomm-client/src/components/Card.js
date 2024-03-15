@@ -3,23 +3,22 @@ import { BACKEND_URL } from "../helper";
 
 const Card = ({id,name,price,description,img}) => {
   return (
-    <div className="row">
-      <div className="col s12 m7">
-        <div className="card">
+    
+      
+        <div className="card pcard">
           <div className="card-image">
-            <img src={ `${BACKEND_URL+img}`} alt={name} />
+            <img className="cimg" src={ `${BACKEND_URL+img}`} alt={name} />
           </div>
           <div className="card-content">
             <span className="card-title">{name}</span>
-            <p>
+            <p className="truncate">
               {description}
             </p>
-            <h6>{price}</h6>
+            <h6>${price}</h6>
           </div>
           
         </div>
-      </div>
-    </div>
+   
   );
 };
 
