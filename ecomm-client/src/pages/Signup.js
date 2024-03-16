@@ -1,18 +1,24 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { SIGNUP_USER } from "../gqlOperation/mutation";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({});
-  const [SignupUser,{loading, error,data}] = useMutation(SIGNUP_USER)
+  const [signupUser,{loading, error,data}] = useMutation(SIGNUP_USER)
 
   if(loading) return <h2>loading ...</h2>
-  if(data) console.log(data)
+  if(data) {
+    localStorage.setItem("jwt",data.register.jwt)
+    navigate('/')
+  }
 
   const handelSubmit = (e) => {
     e.preventDefault();
     // console.log(formData);
-    SignupUser({
+    signupUser({
       variables:{
         input:formData
       }

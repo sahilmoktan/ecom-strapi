@@ -28,6 +28,13 @@
 ### .
 - materialize cdn for quick css
 - made pages & components
+- materialize icon for icons
 
-### [ract carousel] (https://github.com/brainhubeu/react-carousel)
+### [ract carousel](https://github.com/brainhubeu/react-carousel)
 - npm i @brainhubeu/react-carousel --legacy-peer-deps  //
+
+### [react-use-cart](https://github.com/notrab/react-use-cart)
+- npm install react-use-cart # yarn add react-use-cart
+- - allow us to deal with cart items more easily,
+- - cart items stores in local storage
+- - calculates all the total cart item prices

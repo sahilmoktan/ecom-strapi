@@ -1,3 +1,4 @@
+import Cart from "./pages/Cart"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Product from "./pages/Product"
@@ -8,6 +9,7 @@ const routes =[
     {path:"/login",element:<Login />},
     {path:"/signup",element:<Signup />},
     {path:"/product/:pid",element:<Product />},
+    {path:"/cart",element:<Cart />},
 
 ]
 

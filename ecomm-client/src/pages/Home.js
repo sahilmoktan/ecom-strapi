@@ -14,7 +14,8 @@ const Home = () => {
     
         <div className='homeroot'>
             {data.products.data.map(({id,attributes})=>{
-                return <Card
+                return <Card 
+                key={id}
                 id={id}
                 name={attributes.Name}
                 price={attributes.Price}

@@ -4,10 +4,13 @@ import { useParams } from "react-router-dom";
 import { GET_PRODUCT } from "../gqlOperation/queries";
 import Carousel from "@brainhubeu/react-carousel";
 import { BACKEND_URL } from "../helper";
+import { useCart } from "react-use-cart";
 
 const Product = () => {
   const { pid } = useParams();
   // console.log(pid)
+
+  const{addItem}=  useCart()
 
   const { loading, error, data } = useQuery(GET_PRODUCT, {
     variables: {
@@ -20,6 +23,15 @@ const Product = () => {
   if (data) console.log(data);
 
   const { Name, Price, Description, Images } = data.product.data.attributes;
+
+  const addToCart= ()=>{
+    addItem({
+      id:pid,
+      name:Name,
+      price:Price,
+      img:BACKEND_URL+Images.data[0].attributes.url
+    })
+  }
 
   return (
     <div className="container">
@@ -37,7 +49,7 @@ const Product = () => {
           $ {Price}
         </h5>
         <p> {Description}</p>
-        <button className="btn blue">Add to Cart</button>
+        <button className="btn blue" onClick={addToCart}>Add to Cart</button>
       </div>
     </div>
   );

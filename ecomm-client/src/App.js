@@ -1,4 +1,5 @@
 import "./App.css";
+import { CartProvider} from "react-use-cart";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 // import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
@@ -24,11 +25,13 @@ const Routes = () => {
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
       <ApolloProvider client={client}>
         <Routes />
       </ApolloProvider>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 
