@@ -26,4 +26,8 @@
 - wrap components by Apolloprovider return from App
 
 ### .
-materialize
+- materialize cdn for quick css
+- made pages & components
+
+### [ract carousel] (https://github.com/brainhubeu/react-carousel)
+- npm i @brainhubeu/react-carousel --legacy-peer-deps  //
