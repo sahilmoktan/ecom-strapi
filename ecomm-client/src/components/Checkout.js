@@ -112,7 +112,7 @@ const CheckoutForm = () => {
                 }
             }} /> */}
             <br />
-            <button className="blue btn" type="submit">
+            <button className="blue btn" type="submit" >
                 Pay
             </button>
             

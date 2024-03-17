@@ -1,11 +1,11 @@
 import "./App.css";
 import { CartProvider} from "react-use-cart";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-// import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, useRoutes } from "react-router-dom";
 import routes from "./routes";
 import "@brainhubeu/react-carousel/lib/style.css";
+import Category from "./components/Category";
 
 const client = new ApolloClient({
   uri: `http://localhost:1337/graphql`, //address where our graphql is running
@@ -18,7 +18,7 @@ const Routes = () => {
     <>
       <NavBar />
       {element}
-      {/* <Home /> */}
+      <Category/>
     </>
   );
 };
