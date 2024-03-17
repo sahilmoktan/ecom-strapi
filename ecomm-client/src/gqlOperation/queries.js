@@ -1,25 +1,34 @@
 import { gql } from "@apollo/client";
 
-export const GET_ALL_PRODUCTS=gql`
-query getAllproducts{
-    products{data{
-      id
-        attributes{
-        Name
-        Description
-        Price
-        Images{
-          data{
-            attributes{
-              url
+export const GET_ALL_PRODUCTS = gql`
+  query getAllproducts($pagination: PaginationArg) {
+    products(pagination: $pagination) {
+      data {
+        id
+        attributes {
+          Name
+          Description
+          Price
+          Images {
+            data {
+              attributes {
+                url
+              }
             }
           }
         }
-      }}}
+      }
+      meta {
+        pagination {
+          pageCount
+        }
+      }
+    
+    }
   }
-  `
+`;
 
-  export const GET_PRODUCT = gql`
+export const GET_PRODUCT = gql`
   query Product($productId: ID) {
     product(id: $productId) {
       data {
@@ -38,9 +47,9 @@ query getAllproducts{
       }
     }
   }
-  `
+`;
 
- export const GET_ALL_CATEGORIES =gql`
+export const GET_ALL_CATEGORIES = gql`
   query Categories {
     categories {
       data {
@@ -50,12 +59,13 @@ query getAllproducts{
         }
       }
     }
-  }`
+  }
+`;
 
-  export const GET_PRODUCT_BY_CATEGORY = gql`
+export const GET_PRODUCT_BY_CATEGORY = gql`
   query Category($categoryId: ID) {
     category(id: $categoryId) {
-      data{
+      data {
         attributes {
           products {
             data {
@@ -77,9 +87,9 @@ query getAllproducts{
         }
       }
     }
-  }`
+  }
+`;
 
-  
 export const GET_PRODUCT_BY_NAME = gql`
   query Products($filters: ProductFiltersInput) {
     products(filters: $filters) {
@@ -91,4 +101,5 @@ export const GET_PRODUCT_BY_NAME = gql`
         }
       }
     }
-  }`
+  }
+`;

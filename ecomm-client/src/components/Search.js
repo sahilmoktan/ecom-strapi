@@ -22,7 +22,7 @@ const [getProduct, { data, loading }] = useLazyQuery(GET_PRODUCT_BY_NAME, {
 
 
 useEffect(()=>{
-    if(nameQuery.length !=0){
+    if(nameQuery.length !==0){
         getProduct()
         sethideResult(false)
        } else{
@@ -30,14 +30,20 @@ useEffect(()=>{
        }
 },[nameQuery])
 
+const handelChange=(e)=>{
+    setTimeout(()=>{
+        setNameQuery(e.target.value)
+    },1000)
+}
+
 if (loading) return <h3>loading categories</h3>;
 
 
   return (
-    <div classNameName="container">
+    <div classNameName="container" >
       
-        <div className="input-field">
-          <input type="search" value={nameQuery} onChange={(e)=>setNameQuery(e.target.value)} required />
+        <div className="input-field" style={{width:'80vw', justifyContent:'center'}}>
+          <input type="search"  onChange={handelChange} required />
           <label className="label-icon">
             <i className="material-icons">search</i>
           </label>
