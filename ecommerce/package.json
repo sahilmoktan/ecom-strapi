@@ -6,8 +6,10 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "build": "babel src -d lib",
+    "strapi": "strapi",
+    "prebuild": "jest",
+    "test": "jest"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.20.5",
@@ -35,5 +37,8 @@
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
