@@ -47,3 +47,16 @@
 // "react-scripts": "4.0.3",
 conflict on dependency by @stripe
 now retrived 😣😣
+
+
+### Cloudinary
+- now here our uploaded images are saved in local public storage
+- so we use cloudinary to store image and get img url
+- npm i @strapi/provider-upload-cloudinary  //on server
+- set Provider Configuration on  ./config/plugins.js
+
+### deployment backend
+- setup env
+- set cloudinary for image management
+- deploying on heroku
+- first login and other steps
