@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useCart } from 'react-use-cart'
+import Checkout from '../components/Checkout'
 
 const Cart = () => {
+    const [checkout,setCheckout] = useState(false)
     const {isEmpty,items,cartTotal,removeItem}= useCart()
+
+    const jwt = localStorage.getItem('jwt')
+
+    if(checkout){
+        return(
+            <div className="container">
+                <h4>payment page</h4>
+                <Checkout/>
+                <br/>
+                <button className='btn red' onClick={()=>setCheckout(false)}>cancel</button>
+            </div>
+        )
+    }
+
     if(isEmpty) return <h1>Your cart is empty</h1>
+
     if(items)console.log(items)
   return (
     <div>
@@ -26,8 +43,14 @@ const Cart = () => {
             <div className="col m3 offset-m1" style={{position:"sticky",top:"2px"}}>
             <h2>Total Price</h2>
             <h2>$ {cartTotal}</h2>
-            <button className="btn blue">checkout</button>
+            { jwt? 
+                <>
+                <button className="btn blue" onClick={()=>setCheckout(true)}>checkout</button>
+                </>
+                :
+                <div className="card-panel red white-text">Please login to checkout</div>
 
+            }
 
             </div>
         </div>

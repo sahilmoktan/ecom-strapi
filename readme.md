@@ -38,3 +38,12 @@
 - - allow us to deal with cart items more easily,
 - - cart items stores in local storage
 - - calculates all the total cart item prices
+
+### ..............................................
+- npm install @stripe/react-stripe-js @stripe/stripe-js --legacy-peer-deps  //for client
+- yarn @stripe/react-stripe-js @stripe/stripe-js  //for client
+
+// "react-dom": "^18.2.0"
+// "react-scripts": "4.0.3",
+conflict on dependency by @stripe
+now retrived 😣😣

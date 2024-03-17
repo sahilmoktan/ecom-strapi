@@ -15,19 +15,21 @@ const NavBar = () => {
     <div className="nav-wrapper #1976d2 blue darken-2">
       <Link to="/" className="brand-logo">Daraz</Link>
       <ul id="nav-mobile" className="right">
-        {
-
-          jwt?
-          <>
-          <li>
+      <li>
             <Link to="/cart">
             <i style={{padding:"0 20px"}} className="material-icons large #0d47a1 blue darken-4">add_shopping_cart</i>
             </Link> 
             </li>
+        {
+
+          jwt?
+          <>
+          
           <li><i style={{padding:"0 20px"}} className="material-icons large red" onClick={logout}>logout</i></li>
           </>
           :
           <>
+          
           <li> <Link to='/login'> Login</Link> </li>
         <li> <Link to='/signup'> Signup</Link> </li>
           </>
