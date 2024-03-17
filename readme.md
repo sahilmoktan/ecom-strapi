@@ -55,8 +55,20 @@ now retrived 😣😣
 - npm i @strapi/provider-upload-cloudinary  //on server
 - set Provider Configuration on  ./config/plugins.js
 
-### deployment backend
+### deployment backend (skip)
 - setup env
 - set cloudinary for image management
 - deploying on heroku
 - first login and other steps
+
+- heroku dont support sql so 
+- - heroku addons:create heroku-postgresql:hobby-dev 
+
+ - - heroku headace, hosting server decide to render on render.com
+
+ ## [Render](https://dashboard.render.com/d/dpg-cnrjgdgl5elc73b27tf0-a)
+ - create account/ create project
+ - create postgreSQl giv names for db under connection tab
+ - same configration can be used in .env dbhost, dbport etc
+ - also cloudinary configrations as well
+ - then push code on git hub, use through pipeline
