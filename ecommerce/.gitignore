@@ -1,3 +1,10 @@
+.editorconfig
+.env.example
+.eslintrc
+.strapi*
+.eslintignore
+yarn.lock
+jsconfig.json
 ############################
 # OS X
 ############################
