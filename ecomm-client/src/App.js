@@ -6,9 +6,10 @@ import { BrowserRouter, useRoutes } from "react-router-dom";
 import routes from "./routes";
 import "@brainhubeu/react-carousel/lib/style.css";
 import Category from "./components/Category";
+import { BACKEND_URL } from "./helper";
 
 const client = new ApolloClient({
-  uri: `http://localhost:1337/graphql`, //address where our graphql is running
+  uri: `${BACKEND_URL}/graphql`, //address where our graphql is running & then change to online hosted url
   cache: new InMemoryCache(),
 });
 

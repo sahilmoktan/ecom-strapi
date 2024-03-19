@@ -40,9 +40,9 @@ if (loading) return <h3>loading categories</h3>;
 
 
   return (
-    <div classNameName="container" >
+    <div className="container" >
       
-        <div className="input-field" style={{width:'80vw', justifyContent:'center'}}>
+        <div className="input-field">
           <input type="search"  onChange={handelChange} required />
           <label className="label-icon">
             <i className="material-icons">search</i>

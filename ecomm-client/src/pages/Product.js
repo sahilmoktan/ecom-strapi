@@ -3,7 +3,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { GET_PRODUCT } from "../gqlOperation/queries";
 import Carousel from "@brainhubeu/react-carousel";
-import { BACKEND_URL } from "../helper";
 import { useCart } from "react-use-cart";
 
 const Product = () => {
@@ -29,7 +28,7 @@ const Product = () => {
       id:pid,
       name:Name,
       price:Price,
-      img:BACKEND_URL+Images.data[0].attributes.url
+      img:Images.data[0].attributes.url
     })
   }
 
@@ -38,7 +37,7 @@ const Product = () => {
       <Carousel plugins={["arrows"]}>
       {
         Images.data.map(({attributes})=>{
-          return <img style={{height:"50vh"}} src={BACKEND_URL+attributes.url} alt="" />
+          return <img style={{height:"50vh"}} src={attributes.url} alt="" />
         })
       }
       </Carousel>

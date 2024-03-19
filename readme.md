@@ -14,6 +14,11 @@
 - Setting: set Strapi API for public & authorized user
 - successfully fetch json data in grpahql playground data form strapi
 
+//error debugged by 
+- yarn add @strapi/plugin-graphql@4.20.5  // for graphql strapi
+- yarn add stripe // both in server, is used for debitCard system :resolved last issue, 
+- - note: strapi is headless cms: stripe for payment card system management
+
 ### create react app for client site
 - npx create-react-app ecom-client (main dir strapi)
 - npm i react-router-dom graphql @apollo/client (in ecom-client dir)
@@ -41,12 +46,15 @@
 
 ### ..............................................
 - npm install @stripe/react-stripe-js @stripe/stripe-js --legacy-peer-deps  //for client
-- yarn @stripe/react-stripe-js @stripe/stripe-js  //for client
+//for client
+- yarn add @stripe/react-stripe-js @stripe/stripe-js
 
 // "react-dom": "^18.2.0"
 // "react-scripts": "4.0.3",
 conflict on dependency by @stripe
 now retrived 😣😣
+
+
 
 
 ### Cloudinary
@@ -72,3 +80,8 @@ now retrived 😣😣
  - same configration can be used in .env dbhost, dbport etc
  - also cloudinary configrations as well
  - then push code on git hub, use through pipeline
+
+## after backend deployment
+- again we have to create products to show :note not careate fields
+- in react we need to change uri pointing towards backend hosted url (helper)
+- change image path so we can get form cloudinary as well

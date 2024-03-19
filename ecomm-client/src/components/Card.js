@@ -1,5 +1,4 @@
 import React from "react";
-import { BACKEND_URL } from "../helper";
 import { Link } from "react-router-dom";
 
 const Card = ({id,name,price,description,img}) => {
@@ -8,7 +7,7 @@ const Card = ({id,name,price,description,img}) => {
       <Link className="pcard" to={`/product/${id}`}>
         <div className="card">
           <div className="card-image">
-            <img className="cimg" src={ `${BACKEND_URL+img}`} alt={name} />
+            <img className="cimg" src={ img} alt={name} />
           </div>
           <div className="card-content black-text">
             <span className="card-title">{name}</span>

@@ -11,7 +11,7 @@ const Cart = () => {
     if(checkout){
         return(
             <div className="container">
-                <h4>payment page</h4>
+                <h4>Payment Page</h4>
                 <Checkout/>
                 <br/>
                 <button className='btn red' onClick={()=>setCheckout(false)}>cancel</button>
